@@ -1,0 +1,56 @@
+*{
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    text-decoration: none
+}
+html{
+    scroll-behavior: smooth;
+}
+body{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+}
+:root{
+    --bg-color: #090909;
+    --sec-bg-colo-: #1f1d1d;
+    --text-color: #e3f0f0;
+}
+header{
+    display: flex;
+    padding: 20px 0;
+    margin: 0;
+    justify-content: space-between;
+    align-items: center;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+}
+header .burgermenu{
+    display: none;
+}
+header .logo{
+    font-size: 30px;
+    font-weight: bold;
+}
+header .menubar ul{
+    display: flex;
+}
+header .menubar ul li a{
+    display: block;
+    color: var(--text-color);
+    font-size: 20px;
+    padding: 10px 20px;
+    transition: .3s linear;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    
+}
+
+header .menubar ul li a:hover, header .menubar ul li a.active {
+    background-color: var(--text-color);
+    color: var(--bg-color);
+}
