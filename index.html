@@ -16,10 +16,10 @@
             <a href="#" class="logo"><span>L</span>ukhanyo.</a>
             <i class='bx bx-menu' id="menu-icon"></i>
             <nav class="navbar">
-                <a href="#home" style="--i:1" class="active">Home</a>
-                <a href="#about" style="--i:2">About</a>
-                <a href="#projects" style="--i:3">Projects</a>
-                <a href="#contact" style="--i:5">Contact</a>
+                <a href="#home">Home</a>
+                <a href="#about">About</a>
+                <a href="#projects">Projects</a>
+                <a href="#contact">Contact</a>
             </nav>
         </header>
         <section class="home" id="home">
@@ -49,6 +49,7 @@
                     lorem ipsum dolor sit amet consectetur adipiscing elit. Accusantium, ab autem repellat reiciendis ipsum.
                     lorem ipsum dolor sit amet consectetur adipiscing elit. Accusantium, ab autem repellat reiciendis ipsum.
                 </p>
+
                 <a href="#" class="btn">Read More</a>
             </div>
         </section>
@@ -82,19 +83,27 @@
             </div> 
         </section>
         <section class="contact" id="contact">
-            <h2 class="heading">Contact <span>Me</span></h2>
-            <form action="#">
-                <div class="input-box">
-                    <input type="text" placeholder="Full Name">
-                    <input type="text" placeholder="Email Address">
+            <div class="contact-left">
+                <h2 class="heading">Contact <span>Me</span></h2>
+                <p><i class='bx bx-envelope' ></i>lukhanyomhlifili@gmail.com</p>
+                <p><i class='bx bx-phone'></i>0640881321</p>
+
+                <div class="social-media-icons">
+                    <a href="#"><i class='bx bxl-github' ></i></a>
+                    <a href=""><i class='bx bxl-linkedin-square' ></i></a>
                 </div>
-                <div class="input-box">
-                    <input type="number" placeholder="Mobile Number">
-                    <input type="text" placeholder="Email subject">
-                </div>
-                <textarea name="" id="" cols="30" rows="10" placeholder="Your message"></textarea>
-                <input type="submit" value="Send Message" class="btn">
-            </form>
+                <a href="Lukhanyo Mhlifili CV.pdf" download  class="btn btn2" target="_blank">Download CV</a>
+
+            </div>
+            <div class="contact-right">
+                <form>
+                    <input type="text" name="name" placeholder="Your Name" required>
+                    <input type="email" placeholder="Your Email" required>
+                    <textarea name="message" id="msg" rows="10" placeholder="Your message"></textarea>
+                    <input type="submit" value="Send Message" class="btn">
+                </form>
+            </div>
+            
         </section>
         <footer class="footer">
             <div class="footer-text">
@@ -105,47 +114,6 @@
             </div>
         </footer>
 
-        <script src="script.js></script>
-
-<!--<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Lukhanyo Mhlifili eportfolio design</title>
-    <link rel="stylesheet" href="C:\Users\lukha\eportfolio_web_design\style.css" type="text/css">
-</head>
-<body>
-    <header>
-        <div class="burgermenu">
-            <div class="line"></div>
-            <div class="line"></div>
-            <div class="line"></div>
-        </div>
-        <div class="logo"><span>L</span>ukhanyo.</div>
-        <div class="menubar">
-            <a href="#">Home</a>
-            <a href="#">About</a>
-            <a href="#">Projects</a>
-            <a href="#">Contact</a>
-        </div>
-    </header>
-    <section class="home">
-        <div class="home-content"> 
-            <h3>Hi, I am </h3>
-            <h1 id="myname">Lukhanyo Mhlifili</h1>
-            <h3>I am a <span class="role" style="color: aquamarine">Junior Developer</span></h3>
-            <p>lorem ipsum dolor sit amet consectetur adipiscing elit. Accusantium, ab autem repellat reiciendis ipsum.</p>
-        </div>
-        
-        <div class="home-img">
-            <img src="images/homeimge.jpg" alt="Home profile image">
-        </div>
-    </section>
-
-    <section>
-
-    </section>
+        <script src="app.js"></script>
 </body>
 </html>
