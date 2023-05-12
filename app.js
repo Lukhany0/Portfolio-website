@@ -1,5 +1,10 @@
 
-window.addEventListener('scroll', function() {
+window.onload = ()=>{
+
+
+
+  //styling the menu bar to change element color when section is displayed on the screen
+  window.addEventListener('scroll', function() {
     var sections = document.querySelectorAll('section');
     var navLinks = document.querySelectorAll('nav a');
     var currentSection = '';
@@ -19,3 +24,30 @@ window.addEventListener('scroll', function() {
       }
     });
   });
+
+  //contact form data
+  var contactForm = document.getElementById("contact-form");
+  var res = document.getElementById("submit-response");
+  contactForm.addEventListener("submit", e => {
+    e.preventDefault();
+    var formData = new FormData(contactForm);
+
+    fetch(contactForm.getAttribute("action"), {
+      method: "POST",
+      body: formData,
+    })
+      .then(function() {
+        res.innerText = 'Message sent sucessfully!!!'
+        
+        setTimeout(function(){
+          res.innerText=''
+          contactForm.reset()
+        },7000)
+        
+        
+      })
+      .catch(error => {
+        console.error(error); // Handle any error that occurred during the fetch request
+      });
+  });
+}
