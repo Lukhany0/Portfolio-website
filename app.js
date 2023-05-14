@@ -2,7 +2,15 @@
 window.onload = ()=>{
 
 
-
+    //sidemenu
+    var menuIcon = document.querySelector('#menu-icon');
+    var navbar = document.querySelector('.navbar');
+    
+    menuIcon.addEventListener('click', function(){
+      menuIcon.classList.toggle('bx-x');
+      navbar.classList.toggle('active');
+    });
+  
   //styling the menu bar to change element color when section is displayed on the screen
   window.addEventListener('scroll', function() {
     var sections = document.querySelectorAll('section');

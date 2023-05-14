@@ -14,6 +14,7 @@
     --text-color: #d1d9d9;
     --hover-color: #87f1c1;
     --p-fsize: 1.7rem;
+    --h3-fsize: 3.2rem;
 }
 html{
     font-size: 62.5%;
@@ -52,9 +53,7 @@ section{
 .logo:hover{
     animation: Rotate 5s linear infinite; 
 }
-span{
-    color: var(--hover-color);
-}
+
 .navbar a{
     display: inline-block;
     font-size: 1.8rem;
@@ -72,13 +71,11 @@ span{
     display:none;
 }
 .home{
-    position: relative;
-    width: 100%;
-    height: 100vh;
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
-    padding: 50px 10% 0;
+    gap: 2rem;
+    background: var(--bg-color);
 }
 
 .home-content{
@@ -86,14 +83,17 @@ span{
 }
 
 .home-content h3{
-    font-size: 3.2rem;
-    font-weight: 700;
+    font-size: var(--h3-fsize);
+    font-weight: 400;
 }
 
 .home-content h3:nth-of-type(2){
-    margin-bottom: 2rem;
+    margin-bottom: 2.5rem;
 }
-
+.home-content h3 span{
+    color: var(--text-color);
+    font-weight: 700;
+}
 .home-content h1{
     display: inline-block;
     color: var(--hover-color);
@@ -103,11 +103,9 @@ span{
     transition: .3s;
 }
 .home-content h1:hover{
-    font-size: 5.9rem;
+    transform: scale(1.1);
 }
-.home-content h3 span{
-    color: var(--hover-color);
-}
+
 .home-content p{
     font-size: var(--p-fsize);
 }
@@ -115,6 +113,9 @@ span{
     border-radius: 10px;
     box-shadow: 0 0 10px var(--hover-color);
     width: 28vw;
+}
+span{
+    color: var(--hover-color);
 }
 .about{
     display: flex;
@@ -130,14 +131,15 @@ span{
 }
 .heading{
     text-align: center;
-    font-size: 4.5rem;
+    font-size: 4rem;
+    padding-bottom: 20px;
 }
 .about-content h2{
     text-align: left;
     line-height: 1.2;   
 }
 .about-content h3{
-    font-size: 2.6rem;  
+    font-size: var(--h3-fsize);  
 }
 .about-content p{
     font-size: var(--p-fsize);
@@ -148,7 +150,6 @@ span{
     padding: 1rem 2.8rem;
     background-color: var(--hover-color);
     border-radius: 15px;
-   /* box-shadow: 0 0 1rem  var(--hover-color);*/
     font-size: 1.5rem;
     color: var(--bg-color);
     letter-spacing: .1rem;
@@ -162,10 +163,6 @@ span{
 .projects{
     background-color: var(--bg-color);
 }
-.project h2{
-    margin-bottom: 4rem;
-}
-
 .project-container{
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
@@ -199,17 +196,16 @@ span{
     align-items: center;
     flex-direction: column;
     text-align: center;
-    padding: 0 4rem;
-    transform: translateY(100%);
+    transform: translateY(200%);
     transition: .5s ease;
 }
 .project-box:hover .project-layer{
     transform: scale(1.1);
-    transform: translateY(0)
+    transform: translateY(0);
      
 }
 .project-layer h4{
-    font-size: 3rem;
+    font-size: var(--h3-fsize);
 
 }
 .project-layer p{
@@ -236,10 +232,17 @@ span{
     background-color: var(--sec-bg-color);
     display:flex;
     justify-content: space-between;
- 
+}
+.contact .contact-left{
+    width: 100%;
+}
+.contact-left .heading{
+    text-align: left;
 }
 .contact .contact-left p{
-    font-size: 1.5rem;
+    font-size: var(--p-fsize);
+    padding: 0;
+    margin: 0;
 }
 .contact-left p i{
     color: var(--hover-color);
@@ -317,23 +320,17 @@ span{
 .footer-text p{
     font-size: 1.6rem;
 }
-.footer-iconTop a{
-    margin-left: 400px;
-    padding: .8rem;
+.footer .footer-iconTop a{
+    padding: 0.8rem;
     background: var(--hover-color);
     color:#182324;
     border-radius: .8rem;
     font-size: 2.5rem;
-    transition: 0.3s ease;
+    transition: 0.2s;
 }
-.footer-content a:hover{
-    transform: scale(.9);
+.footer-iconTop a:hover{
+    font-size: 2.3rem;
 }
-.footer-content a i{
-    font-size: 2.4rem;
-    color: var(--bg-color);
-}
-
 /*Aniamation*/
 @keyframes Rotate{
     0%{
@@ -347,3 +344,410 @@ span{
     }
 }
 
+/*-------Smaller screens*/
+@media only screen and (max-width: 900px){
+    .header{
+        padding: 1.5rem 3%;
+    }
+    .header .logo{
+        font-size: 2.5rem;
+    }
+    .home{
+        padding: 20px 5% 0;
+    }
+    .home h3{
+        font-size: 2.5rem;
+        font-weight: 500;
+    }
+    .home h1{
+        font-size: 4.5rem;
+        font-weight: 600;
+    }
+    .home h1:hover{
+        transform: scale(1.05);
+    }
+    
+    .heading{
+        font-size: 3.5rem;
+    }
+    .about h3{
+        font-size: 2.5rem;
+    }
+    .project-container{
+        gap: 2rem;
+    }
+    .project-layer h4{
+        font-size: 2.5rem;
+    
+    }
+    .project-layer a{
+        width: 3rem;
+        height: 3rem;
+        border-radius: 50%;
+    }
+    .project-layer a i{
+        font-size: 1.7rem;
+    }
+    .contact{
+        padding-left: 3%;
+        padding-right: 3%;
+    }
+    .contact .contact-left p i{
+        font-size: 2rem;
+    }
+    .contact .contact-right form{
+        width: 90%;
+    }
+    .footer{
+        padding: 2rem 5%;
+    }
+    .footer .footer-iconTop a{
+        font-size: 2rem;
+    }
+    .footer .footer-iconTop a:hover{
+        font-size: 1.8rem;
+    }
+}
+@media only screen and (max-width: 700px){
+    .header #menu-icon{
+        display: block;
+        font-size: 2.5rem;
+        cursor: pointer;
+    }
+    .navbar{
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        padding: 1rem 3%;
+        background-color: var(--bg-color);
+        border-top: .1rem solid rgba(0,0,0,.2);
+        box-shadow: 0 .2rem rgba(0,0,0,.2);
+        transform: translateY(-150%);
+    }
+    .navbar.active{
+        transform: translateY(0);
+    }
+    .navbar a{
+        display: block;
+        font-size: 2rem;
+        margin: 3rem 0;
+    }
+    .header{
+        padding: 1.5rem 1%;
+    }
+    .header .logo{
+        font-size: 2.5rem;
+    }
+    .home{
+        flex-direction: column;
+        margin-top: 50px;
+        overflow-y:auto;
+    }
+    .home h3{
+        font-size: 2.5rem;
+        font-weight: 500;
+    }
+    .home h1{
+        font-size: 4.5rem;
+        font-weight: 600;
+    }
+    .home h1:hover{
+        transform: scale(1.05);
+    }
+    .home .home-img img{
+        width: 35vw;
+    }
+    .heading{
+        font-size: 3.5rem;
+    }
+    .about{
+        flex-direction: column;
+    }
+    .about .about-img img{
+        width: 35vw;
+    }
+    .about h3{
+        font-size: 2.5rem;
+    }
+    .project-container{
+        display:flex;
+        justify-content: left;
+        align-items: center;
+        flex-wrap: wrap;
+    }
+    .project-layer h4{
+        font-size: 2.5rem;
+    
+    }
+    .project-layer a{
+        width: 3rem;
+        height: 3rem;
+        border-radius: 50%;
+    }
+    .project-layer a i{
+        font-size: 1.7rem;
+    }
+    .contact{
+        display: block;
+    }
+    .contact .contact-left{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        padding-bottom: 3rem;
+    }
+    .contact .contact-left p i{
+        font-size: 2rem;
+    }
+    .contact .contact-right form{
+        width: 90%;
+    }
+    .footer{
+        padding: 2rem 5%;
+    }
+    .footer .footer-iconTop a{
+        font-size: 2rem;
+    }
+    .footer .footer-iconTop a:hover{
+        font-size: 1.8rem;
+    }
+@media only screen and (max-width: 700px){
+    .header #menu-icon{
+        display: block;
+        font-size: 2.5rem;
+        cursor: pointer;
+    }
+    .navbar{
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        padding: 1rem 3%;
+        background-color: var(--bg-color);
+        border-top: .1rem solid rgba(0,0,0,.2);
+        box-shadow: 0 .2rem rgba(0,0,0,.2);
+        transform: translateY(-150%);
+        transition: 2s ease;
+    }
+    .navbar.active{
+        transform: translateY(0);
+    }
+    .navbar a{
+        display: block;
+        font-size: 2rem;
+        margin: 3rem 0;
+    }
+    .header{
+        padding: 1.5rem 1%;
+    }
+    .header .logo{
+        font-size: 2.5rem;
+    }
+    .home{
+        flex-direction: column;
+    }
+    .home h3{
+        font-size: 2.5rem;
+        font-weight: 500;
+    }
+    .home h1{
+        font-size: 4.5rem;
+        font-weight: 600;
+    }
+    .home h1:hover{
+        transform: scale(1.05);
+    }
+    .home .home-img img{
+        width: 35vw;
+    }
+    .heading{
+        font-size: 3.5rem;
+    }
+    .about{
+        flex-direction: column;
+    }
+    .about-content{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+    }
+    .about .about-img img{
+        width: 35vw;
+    }
+    .about h3{
+        font-size: 2.5rem;
+    }
+    .project-container .project-box{
+        display: block;
+        margin: 0 auto;
+    }
+    .project-layer h4{
+        font-size: 2rem;
+    
+    }
+    .project-layer p{
+        font-size: 1.5rem;
+    
+    }
+    .project-layer a{
+        width: 2rem;
+        height: 2rem;
+        border-radius: 50%;
+    }
+    .project-layer a i{
+        font-size: 2rem;
+    }
+    .contact{
+        display: block;
+    }
+    .contact .contact-left{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        padding-bottom: 3rem;
+    }
+    .contact .contact-left p i{
+        font-size: 1.5rem;
+    }
+    .contact .contact-right form{
+        width: 100%;
+    }
+    .footer{
+        padding: 2rem 5%;
+    }
+    .footer .footer-iconTop a{
+        font-size: 2rem;
+    }
+    .footer .footer-iconTop a:hover{
+        font-size: 1.8rem;
+    }
+}
+
+@media only screen and (max-width: 480px){
+    .header #menu-icon{
+        display: block;
+        font-size: 2rem;
+        cursor: pointer;
+    }
+    .navbar{
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        padding: 1rem 1%;
+        background-color: var(--bg-color);
+        border-top: .1rem solid rgba(0,0,0,.2);
+        box-shadow: 0 .2rem rgba(0,0,0,.2);
+        transform: translateY(-150%);
+        transition: 2s ease;
+    }
+    .navbar.active{
+        transform: translateY(0);
+    }
+    .navbar a{
+        display: block;
+        font-size: 1.5rem;
+        margin: 3rem 0;
+    }
+    .header{
+        padding: 1.5rem 1%;
+    }
+    .header .logo{
+        font-size: 2rem;
+    }
+    .home{
+        flex-direction: column;
+    }
+    .home h3{
+        font-size: 2rem;
+        font-weight: 500;
+    }
+    .home h1{
+        font-size: 3rem;
+        font-weight: 600;
+    }
+    .home h1:hover{
+        transform: scale(1.05);
+    }
+    .home p{
+        font-size: 1.5rem;
+    }
+    .home .home-img img{
+        display: block;
+        width: 70vw;
+    }
+    .heading{
+        font-size: 2.5rem;
+    }
+    .about{
+        flex-direction: column;
+    }
+    .about .about-img img{
+        display: block;
+        width: 70vw;
+    }
+    .about h3{
+        font-size: 2rem;
+    }
+    .about p{
+        font-size: 1.5rem;
+    }
+    .btn{
+        display: block;
+        text-align: center;
+        width: 100%;
+    }
+    .project-container{
+        display:flex;
+        justify-content: left;
+        align-items: center;
+        flex-wrap: wrap;
+    }
+    .project-layer h4{
+        font-size: 2.5rem;
+    
+    }
+    .project-layer a{
+        width: 3rem;
+        height: 3rem;
+        border-radius: 50%;
+    }
+    .project-layer a i{
+        font-size: 1.7rem;
+    }
+    .contact{
+        display: block;
+    }
+    .contact .contact-left{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        padding-bottom: 3rem;
+    }
+    .contact .contact-left p i{
+        font-size: 2rem;
+    }
+    .contact .contact-left p{
+        font-size: 1.5rem;
+    }
+    .contact .contact-right form{
+        width: 100%;
+    }
+    .footer{
+        padding: 2rem 3%;
+    }
+    .footer .footer-text p{
+        font-size: 1.5rem;
+    }
+    .footer .footer-iconTop a{
+        font-size: 1.7rem;
+    }
+    .footer .footer-iconTop a:hover{
+        font-size: 1.5rem;
+    }
+}
