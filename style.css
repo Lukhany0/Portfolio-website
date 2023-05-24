@@ -7,6 +7,7 @@
     outline: none;
     scroll-behavior: smooth;
     font-family: 'poppins','sans-serif';
+
 }
 :root{
     --bg-color: #152022;
@@ -41,33 +42,53 @@ section{
     align-items: center;
     z-index: 100;
 }
-
 .logo{
+    display: flex;
+    align-items: center;
     font-size: 2.9rem;
-    color: var(--text-color);
-    text-decoration: none;
-    font-weight: 600;
-    cursor: default;
+    justify-content: center;
     transition: 5s;
+}
+.logo span{
+    display:none;
+}
+.logo p{
+    font-weight: 800;
+}
+.logo i{
+    color: #ffdf00;
 }
 .logo:hover{
     animation: Rotate 5s linear infinite; 
 }
 
-.navbar a{
+.deco a{
     display: inline-block;
     font-size: 1.8rem;
     color: var(--text-color);
     text-decoration: none;
     font-weight: 500;
     margin-left: 4rem;
+    position: relative;
     transition: .3s;
 }
-.navbar a:hover,
-.navbar a.active{
-    color: var(--hover-color);
+.deco a::after{
+    
+    content:"";
+    width: 0;
+    height: 3px;
+    background-color: var(--hover-color);
+    position: absolute;
+    left: 50%;
+    bottom: -6px;
+    transition: .5s;
 }
-.header .bx{
+.deco a:hover::after,
+.deco a.active::after{
+    left: 0;
+    width: 100%;
+}
+.header #menu-icon{
     display:none;
 }
 .home{
@@ -120,7 +141,6 @@ span{
 .about{
     display: flex;
     justify-content: center;
-    align-items: center;
     gap: 2rem;
     background: var(--sec-bg-color);
 
@@ -138,12 +158,43 @@ span{
     text-align: left;
     line-height: 1.2;   
 }
+
 .about-content h3{
     font-size: var(--h3-fsize);  
 }
 .about-content p{
     font-size: var(--p-fsize);
     margin: 2rem 0 3rem;
+}
+.about-content .about-table{
+    padding-bottom: 20px;
+}
+
+.table{
+    margin-top: 20px;
+}
+.about-table a{
+    cursor: pointer;
+}
+.about-table ul li span{
+    color: #a1eccf;
+    
+}
+
+.about-table ul{
+    font-size: var(--p-fsize);
+    list-style: none;
+}
+
+.about-table ul li{
+    font-size: var(--p-fsize);
+    padding-bottom: 10px;
+}
+.about-table .table{
+    display: none;
+}
+.table.active-tab{
+    display: block;
 }
 .btn{
     display: inline-block;
@@ -175,6 +226,7 @@ span{
     box-shadow: 0 0 1rem var(--bg-color);
     overflow: hidden;
     display: flex;
+    cursor: pointer;
 }
 .project-box img{
     width: 100%;
@@ -198,6 +250,7 @@ span{
     text-align: center;
     transform: translateY(200%);
     transition: .5s ease;
+
 }
 .project-box:hover .project-layer{
     transform: scale(1.1);
@@ -228,13 +281,108 @@ span{
     font-size: 2rem;
     color: var(--sec-bg-color);
 }
+.project-box .projectView{
+    position: absolute;
+    top:0;
+    left:0;
+    background-color:transparent;
+    width: 100%;
+    height: 100%;
+    cursor: pointer;
+}
+.projectActive{
+    display: none;
+}
+.view-project.projectDisplay{
+    display: none;
+}
+.view-project{
+    display:flex;
+    justify-content:center;
+    margin: 0 10px;
+    gap: 5%;
+
+}
+.view-project .project-photos{
+    display:flex;
+    justify-content:center;
+    background-color:rgba(135, 241, 193,0.2);
+    width:50%;
+    /*height: 80vh;*/
+    position: relative;
+}
+.view-project .project-photos img{
+    min-width: 25vw;
+}
+.project-photos .img-btn{
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    color: red;
+    font-size: 4.5em;
+}
+.img-btn.btn-next{
+    right: 0;
+}
+.img-btn.btn-prev{
+    left: 0;
+}
+
+.view-project .project-text{
+    width: 45%;
+}
+.view-project .project-text .project-head{
+    position: relative;
+}
+.view-project .project-text #project-name{
+    font-size: 4em;
+    font-weight: 500;
+    color: var(--hover-color);
+    padding-bottom: 20px;
+}
+.view-project .project-text i{
+    position: absolute;
+    right: 0;
+    top: 10%;
+    font-size: 3.5rem;
+    color: var(--text-color);
+    cursor: pointer;
+    transition: .3s;
+}
+.view-project .project-text i:hover{
+    color: rgba(255,0,0,.2);
+}
+.view-project .project-text p{
+    font-size: var(--p-fsize);
+    padding-bottom: 10px;
+}
+.view-project .project-text p:nth-last-of-type(1){
+    padding-bottom: 40px;
+}
+.view-project .project-text .viewcode-btn{
+    display: inline-block;
+    padding: 1.2rem 2.8rem;
+    border: 1px solid var(--hover-color);
+    border-radius: 5px;
+    font-size: 1.7em;
+    color: var(--hover-color);
+    letter-spacing: .1rem;
+    text-decoration: none;
+    font-weight: 400;
+    transition: 0.3s;
+    cursor: pointer;
+}
+.view-project .project-text .viewcode-btn:hover{
+    color: var(--bg-color);
+    background-color: var(--hover-color);
+}
 .contact{
     background-color: var(--sec-bg-color);
     display:flex;
     justify-content: space-between;
 }
 .contact .contact-left{
-    width: 100%;
+    width: 80%;
 }
 .contact-left .heading{
     text-align: left;
@@ -279,7 +427,7 @@ span{
 }
 .contact-right form{
     margin: 1rem auto;
-    width: 80%;
+    width: 100%;
     text-align:center;
     margin-bottom: 3rem;
 }
@@ -331,6 +479,7 @@ span{
 .footer-iconTop a:hover{
     font-size: 2.3rem;
 }
+
 /*Aniamation*/
 @keyframes Rotate{
     0%{
