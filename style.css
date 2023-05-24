@@ -231,6 +231,7 @@ span{
 .project-box img{
     width: 100%;
     transition: .5s ease;
+    
 }
 .project-box:hover img{
     width: 100%;
@@ -242,7 +243,7 @@ span{
     left: 0;
     width: 100%;
     height: 100%;
-    background: linear-gradient(rgba(0,0,0,.1), var(--hover-color));
+    background: linear-gradient(rgba(0,0,0,.5), var(--hover-color));
     display: flex;
     justify-content: center;
     align-items: center;
@@ -375,6 +376,9 @@ span{
 .view-project .project-text .viewcode-btn:hover{
     color: var(--bg-color);
     background-color: var(--hover-color);
+}
+.project-text .project-details .text{
+    color: var(--text-color);
 }
 .contact{
     background-color: var(--sec-bg-color);
