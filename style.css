@@ -129,6 +129,7 @@ section{
 
 .home-content p{
     font-size: var(--p-fsize);
+    max-width: 500px;
 }
 .home-img img {
     border-radius: 10px;
@@ -215,8 +216,7 @@ span{
     background-color: var(--bg-color);
 }
 .project-container{
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
+    display: flex;
     align-items: center;
     gap: 2.5rem;
 }
@@ -227,6 +227,7 @@ span{
     overflow: hidden;
     display: flex;
     cursor: pointer;
+    width:45%;
 }
 .project-box img{
     width: 100%;
@@ -243,7 +244,7 @@ span{
     left: 0;
     width: 100%;
     height: 100%;
-    background: linear-gradient(rgba(0,0,0,.5), var(--hover-color));
+    background: linear-gradient(rgba(0,0,0,.1), var(--hover-color));
     display: flex;
     justify-content: center;
     align-items: center;
@@ -260,12 +261,13 @@ span{
 }
 .project-layer h4{
     font-size: var(--h3-fsize);
+    color: var(--bg-color);
 
 }
 .project-layer p{
     font-size: 1.7rem;
     margin: .3rem 0 1rem;
-    color: var(--text-color);
+    color: var(--sec-bg-color);
     font-weight: 700;
 }
 .project-layer a{
@@ -309,7 +311,6 @@ span{
     justify-content:center;
     background-color:rgba(135, 241, 193,0.2);
     width:50%;
-    /*height: 80vh;*/
     position: relative;
 }
 .view-project .project-photos img{
@@ -527,7 +528,11 @@ span{
         font-size: 2.5rem;
     }
     .project-container{
-        gap: 2rem;
+        flex-wrap: wrap;
+        justify-content: left;
+    }
+    .project-container .project-box{
+        width: 45%;
     }
     .project-layer h4{
         font-size: 2.5rem;
@@ -540,6 +545,21 @@ span{
     }
     .project-layer a i{
         font-size: 1.7rem;
+    }
+    .projects .view-project{
+        flex-direction: column-reverse;
+
+    }
+    .projects .view-project .project-photos{
+        margin: 0 auto;
+        width: 70%;
+    }
+    .projects .view-project .project-text{
+        width: 100%;
+        padding-bottom: 20px;
+    }
+    .projects .view-project .project-text #project-name{
+        font-size: 2.5em;
     }
     .contact{
         padding-left: 3%;
@@ -617,6 +637,9 @@ span{
     .about{
         flex-direction: column;
     }
+    .about .about-img{
+        margin: 0 auto;
+    }
     .about .about-img img{
         width: 35vw;
     }
@@ -624,10 +647,13 @@ span{
         font-size: 2.5rem;
     }
     .project-container{
-        display:flex;
+        flex-direction: column;
         justify-content: left;
         align-items: center;
         flex-wrap: wrap;
+    }
+    .project-container .project-box{
+        width: 70%;
     }
     .project-layer h4{
         font-size: 2.5rem;
@@ -682,7 +708,7 @@ span{
         border-top: .1rem solid rgba(0,0,0,.2);
         box-shadow: 0 .2rem rgba(0,0,0,.2);
         transform: translateY(-150%);
-        transition: 2s ease;
+        transition: 2s;
     }
     .navbar.active{
         transform: translateY(0);
@@ -752,6 +778,9 @@ span{
     }
     .project-layer a i{
         font-size: 2rem;
+    }
+    .projects .view-project p{
+        font-size: 1.5em;
     }
     .contact{
         display: block;
@@ -855,10 +884,12 @@ span{
         width: 100%;
     }
     .project-container{
-        display:flex;
         justify-content: left;
         align-items: center;
         flex-wrap: wrap;
+    }
+    .project-container .project-box{
+        width: 100%;
     }
     .project-layer h4{
         font-size: 2.5rem;
@@ -871,6 +902,23 @@ span{
     }
     .project-layer a i{
         font-size: 1.7rem;
+    }
+    .view-project .project-photos{
+        
+        width:100vw;
+    }
+    .projects .project-text .viewcode-btn{
+        display:inline-block;
+        text-align: center;
+        color: var(--bg-color);
+        background-color: var(--hover-color);
+        border-radius: 15px;
+        width: 100%;
+        font-weight: 600;
+        transition: .3s;
+    }
+    .projects .project-text .viewcode-btn:hover{
+        transform: scale(.9);
     }
     .contact{
         display: block;
