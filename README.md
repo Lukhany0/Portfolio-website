@@ -4,7 +4,7 @@ Welcome to my portfolio website! This website serves as a showcase of my project
 
 ## Table of Contents
 
--[Home](#home)
+- [Home](#home)
 - [About](#about)
 - [Projects](#projects)
 - [Contact](#contact)
