@@ -299,7 +299,7 @@ span{
     position: relative;
 }
 .view-project .project-photos img{
-    min-width: 25vw;
+    width: 100%;
 }
 .project-photos .img-btn{
     position: absolute;
@@ -570,7 +570,7 @@ span{
 @media only screen and (max-width: 700px){
     .header #menu-icon{
         display: block;
-        font-size: 2.5rem;
+        font-size: 3rem;
         cursor: pointer;
     }
     .navbar{
@@ -597,7 +597,7 @@ span{
         padding: 1.5rem 1%;
     }
     .header .logo{
-        font-size: 2.5rem;
+        font-size: 3rem;
     }
     .home{
         flex-direction: column;
@@ -667,6 +667,7 @@ span{
         justify-content: center;
         align-items: center;
         padding-bottom: 3rem;
+        margin: 0 auto;
     }
     .contact .contact-left p i{
         font-size: 1.5rem;
@@ -688,7 +689,7 @@ span{
 @media only screen and (max-width: 480px){
     .header #menu-icon{
         display: block;
-        font-size: 2rem;
+        font-size: 2.7rem;
         cursor: pointer;
     }
     .navbar{
@@ -715,7 +716,7 @@ span{
         padding: 1.5rem 1%;
     }
     .header .logo{
-        font-size: 2rem;
+        font-size: 2.7rem;
     }
     .home{
         flex-direction: column;
@@ -771,7 +772,7 @@ span{
     }
     .view-project .project-photos{
         
-        width:100vw;
+        width:100%;
     }
     .projects .project-text .viewcode-btn{
         display:inline-block;
@@ -806,7 +807,7 @@ span{
         width: 100%;
     }
     .footer{
-        padding: 2rem 3%;
+        padding: 2rem 1%;
     }
     .footer .footer-text p{
         font-size: 1.5rem;
